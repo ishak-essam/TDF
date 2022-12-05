@@ -1,0 +1,183 @@
+<body class="bg-light">
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Register Form</h2>
+      <div
+        class="btn btn-primary"
+        routerLink="/Items"
+        style="float: right; width: 10%; height: 1%"
+      >
+        Back
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 order-md-1">
+        <h4 class="mb-3">Information</h4>
+        <form class="needs-validation">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>First name</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.firstname || "Null" }}</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Last name</label>
+              <label>
+                &nbsp; &nbsp;:&nbsp;{{ Enteries.lastname || "Null" }}</label
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Guest Name</label>
+              <label>
+                &nbsp; &nbsp;:&nbsp;{{ Enteries.guestname || "Null" }}</label
+              >
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Email </label>
+              <label>
+                &nbsp; &nbsp;:&nbsp;{{ Enteries.email || "Null" }}
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label> ID </label>
+              <label> &nbsp; &nbsp;:&nbsp;{{ Enteries.id || "Null" }}</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label> COID </label>
+              <label> &nbsp; &nbsp;:&nbsp;{{ Enteries.coid || "Null" }}</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Telephone</label>
+              <label>
+                &nbsp; &nbsp;:&nbsp;{{ Enteries.telephone || "Null" }}</label
+              >
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Arrival</label>
+              <label> &nbsp; &nbsp;:&nbsp;{{ Enteries.arrival }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Departure</label>
+              <label for="lastName">
+                &nbsp;:&nbsp;{{ Enteries.departure || "Null" }}
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Room</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.room || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Night</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.night || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Adult</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.adult || "Null" }} </label>
+            </div>
+          </div>
+          <hr class="mb-4" />
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>resno</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.resno || "Null" }}</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>status</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.status || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>calcstat</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.calcstat || "Null" }} </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label> Nationality</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.nationality || "Null" }} </label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label> Passport</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.passport || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="custom-control custom-checkbox">
+                <label class="custom-control-label">VIP</label>
+                <label class="custom-control-label">
+                  &nbsp;:&nbsp;{{ Enteries.vip || "Null" }}</label
+                >
+              </div>
+              <div class="custom-control custom-checkbox">
+                <label class="custom-control-label">Source</label>
+                <label class="custom-control-label">
+                  &nbsp;:&nbsp;{{ Enteries.source || "Null" }}</label
+                >
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4" />
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Created_date </label>
+              <label>
+                &nbsp;:&nbsp;{{ Enteries.created_date || "Null" }}
+              </label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Changed_date </label>
+              <label>
+                &nbsp;:&nbsp;{{ Enteries.changed_date || "Null" }}
+              </label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Arrtime </label>
+              <label> &nbsp;:&nbsp;{{ Enteries.arrtime || "Null" }} </label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Deptime </label>
+              <label> &nbsp;:&nbsp;{{ Enteries.deptime || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Changehh</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.changehh || "Null" }} </label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Changemm</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.changemm || "Null" }} </label>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Changepm</label>
+              <label> &nbsp;:&nbsp;{{ Enteries.changepm || "Null" }} </label>
+            </div>
+          </div>
+
+          <hr class="mb-4" />
+        </form>
+      </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">© 2017-2018 Company Name</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>

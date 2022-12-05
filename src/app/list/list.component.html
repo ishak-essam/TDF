@@ -1,0 +1,27 @@
+<DIV role="main" class="container">
+  <h2>Names</h2>
+  <div class="Drinks">
+    <div
+      class="drinkINFO"
+      *ngFor="let entrydata of Data.items"
+      (click)="eventcl(entrydata)"
+      [routerLink]="['/Items/' + entrydata.id]"
+    >
+      <div
+        class="ColorDiv"
+        *ngIf="entrydata.id % 2 === 0"
+        style="background-color: #777"
+      ></div>
+      <div
+        class="ColorDiv"
+        *ngIf="entrydata.id % 2 !== 0"
+        style="background-color: rgb(114, 38, 38)"
+      ></div>
+      <div class="content">
+        <h4>{{ entrydata.firstname }}</h4>
+        &nbsp;
+        <h6>{{ entrydata.lastname }}</h6>
+      </div>
+    </div>
+  </div>
+</DIV>

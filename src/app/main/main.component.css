@@ -1,0 +1,15 @@
+.ShowData {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 100px 100px;
+  font-size: 15px;
+  align-content: center;
+  justify-content: center;
+}
+
+.ShowData div p {
+
+  padding: 2px;
+  font-size: larger;
+}

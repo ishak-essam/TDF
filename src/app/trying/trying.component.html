@@ -1,3 +1,57 @@
+<form #userForm="ngForm" (change)="Total(userForm)">
+  {{ UserAccount | json }}
+  <br />
+  {{ userForm.value | json }}
+  <div>
+    <label>FristName</label>
+    <input
+      type="text"
+      class="form-control"
+      name="FristName"
+      [ngModel]="UserAccount.FristName"
+    />
+
+    <div class="form-group">
+      <label for="">LastName</label>
+      <input
+        type="text"
+        class="form-control"
+        name="LastName"
+        [ngModel]="UserAccount.LastName"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input
+      type="text"
+      name="name"
+      id="yName"
+      class="form-control"
+      minlength="15"
+      pattern="ishakessam122@gmail.com"
+      required
+      [ngModel]="UserAccount.Email"
+    />
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input
+      type="password"
+      class="form-control"
+      name="Password"
+      [ngModel]="UserAccount.Password"
+    />
+  </div>
+  <div class="form-check">
+    <label for="">The Sex</label>
+    <select name="sex" [ngModel]="UserAccount.Sex">
+      <option *ngFor="let sex of sex">
+        {{ sex }}
+      </option>
+    </select>
+  </div>
+</form>
 <!-- <form #userForm="ngForm" (change)="Total(userForm)">
   {{ userForm.value | json }}
   <div>
@@ -26,92 +80,87 @@
   <div class="form-group">
     <label for="">Email</label>
     <input
-      type="email"
+      type="text"
+      name="name"
+      id="yName"
       class="form-control"
-      name="Email"
-      #Email="ngModel"
-      ngModel
-      appCustom
-      (change)="Emails(Email)"
-      pattern="ishakessam122@gmail.com"
       minlength="15"
+      pattern="ishakessam122@gmail.com"
+      required
+      ngModel
+      #Emaial="ngModel"
     />
+    <div class="alert alert-danger" *ngIf="Emaial.touched && !Emaial.valid">
+      <div *ngIf="Emaial.errors?.['required']">gmail is Required</div>
+      <div *ngIf="Emaial.errors?.['minlength']">
+        Email willbe min. {{ Emaial.errors?.['minlength'].requiredLength }}
+      </div>
+
+      <div *ngIf="Emaial.errors?.['pattern']">Pattern not matched</div>
+    </div>
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input
-      type="password"
-      class="form-control"
-      name="Password"
-      ngModel
-      appCustom
-    />
+    <input type="password" class="form-control" name="Password" ngModel />
   </div>
   <div class="form-check">
     <label for="">The Sex</label>
-    <select name="sex" ngModel appCustom>
+    <select name="sex" ngModel>
       <option selected>U Must Enter</option>
       <option *ngFor="let sex of sex">{{ sex }}</option>
     </select>
   </div>
-  <div class="alert alert-danger" *ngIf="Email.touched && Email.invalid">
-    Enter Email address
-    <div *ngIf="Email.errors.minlength">
-      Name willbe min. {{ Email.errors.minlength.requiredLength }}
-    </div>
-  </div>
 </form>
-
-<hello name="{{ name }}"></hello>
+ <hello name="{{ name }}"></hello>
 <form #myForm="ngForm" (ngSubmit)="submit(myForm)">
-  <label for="yName">Username </label>
-  <input
-    type="text"
-    name="name"
-    id="yName"
-    class="form-control"
-    minlength="3"
-    maxlength="10"
-    pattern="Maruf"
-    required
-    ngModel
-    #yName="ngModel"
-  />
-  <br /><br />
-  <div class="alert alert-danger" *ngIf="yName.touched && !yName.valid">
-    <div *ngIf="yName.errors?.['required']">Name is Required</div>
-    <div *ngIf="yName.errors?.['minlength']">
-      Name willbe min. {{ yName.errors?.['minlength'].requiredLength }}
+  <div>
+    <label for="yName">Username </label>
+    <input
+      type="text"
+      name="name"
+      id="yName"
+      class="form-control"
+      minlength="3"
+      maxlength="10"
+      required
+      ngModel
+      #yName="ngModel"
+    />
+    <div class="alert alert-danger" *ngIf="yName.touched && !yName.valid">
+      <div *ngIf="yName.errors?.['required']">Name is Required</div>
+      <div *ngIf="yName.errors?.['minlength']">
+        Name willbe min. {{ yName.errors?.['minlength'].requiredLength }}
+      </div>
+      <div *ngIf="yName?.errors?.['maxlength']">
+        Name willbe max. {{ yName.errors?.['maxlength'].requiredLength }}
+      </div>
+      <div *ngIf="yName.errors?.['pattern']">Pattern not matched</div>
     </div>
-    <div *ngIf="yName?.errors?.['maxlength']">
-      Name willbe max. {{ yName.errors?.['maxlength'].requiredLength }}
-    </div>
-    <div *ngIf="yName.errors?.['pattern']">Pattern not matched</div>
   </div>
-  <br /><br />
-  <label for="passWord">Password </label>
-  <input
-    type="password"
-    required
-    minlength="6"
-    maxlength="30"
-    name="passWord"
-    id="passWord"
-    ngModel
-    class="form-control"
-    #passWord="ngModel"
-  />
-  <div class="alert alert-danger" *ngIf="passWord.touched && !passWord.valid">
-    <div *ngIf="passWord.errors?.['required']">Password is Required</div>
-    <div *ngIf="passWord.errors?.['minlength']">
-      Password will be min. {{ passWord.errors?.['minlength'].requiredLength }}
+  <div>
+    <label for="passWord">Password </label>
+    <input
+      type="password"
+      required
+      minlength="6"
+      maxlength="30"
+      name="passWord"
+      id="passWord"
+      ngModel
+      class="form-control"
+      #passWord="ngModel"
+    />
+    <div class="alert alert-danger" *ngIf="passWord.touched && !passWord.valid">
+      <div *ngIf="passWord.errors?.['required']">Password is Required</div>
+      <div *ngIf="passWord.errors?.['minlength']">
+        Password will be min&nbsp;
+        {{ passWord.errors?.['minlength'].requiredLength }}
+      </div>
+      <div *ngIf="passWord.errors?.['maxlength']">
+        Password willbe max. {{ passWord.errors?.['maxlength'].requiredLength }}
+      </div>
     </div>
-    <div *ngIf="passWord.errors?.['maxlength']">
-      Password willbe max. {{ passWord.errors?.['maxlength'].requiredLength }}
-    </div>
-    <div *ngIf="passWord.errors?.['pattern']">Pattern not matched</div>
   </div>
-  <br /><br />
+
   <button class="submit" [disabled]="!myForm.valid">Login</button>
-</form>
--->
+</form> -->

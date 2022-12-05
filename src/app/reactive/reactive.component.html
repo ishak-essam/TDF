@@ -5,11 +5,17 @@
       type="email"
       class="form-control"
       formControlName="Email"
+      pattern="+\w@gmail.com"
       placeholder="Enter email"
     />
     <div class="alert alert-danger" *ngIf="emails?.invalid && emails?.touched">
-      Error Email
+      <div class="alert alert-danger" *ngIf="emails?.errors?.['Ends']">
+        Gmail isn't Completed
+      </div>
     </div>
+    <!-- <small class="text-danger" *ngIf="emails?.invalid && emails?.touched">
+      Gmail isn't touched or invalid
+    </small> -->
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Password address</label>
@@ -23,7 +29,12 @@
       class="alert alert-danger"
       *ngIf="Passwords?.invalid && Passwords?.touched"
     >
-      Error !!!!!!!!!!!!!!!!!!!!!!!!!
+      <div
+        class="alert alert-danger"
+        *ngIf="Passwords?.errors?.['PasswordKeyWords']"
+      >
+        Captial Charachters or specail charthters
+      </div>
     </div>
   </div>
 </form>
